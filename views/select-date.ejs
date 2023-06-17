@@ -1,0 +1,74 @@
+<style>
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .card {
+    width: 300px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  input[type="date"] {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .button-container button,
+  .button-container a {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .button-container a {
+    margin-left: 10px;
+  }
+</style>
+
+<div class="card">
+  <h1>Select start and end date</h1>
+  <form action="/select-date" method="POST">
+    <input type="hidden" name="firstName" value="<%= firstName %>">
+    <input type="hidden" name="lastName" value="<%= lastName %>">
+    <input type="hidden" name="wheels" value="<%= wheels %>">
+    <input type="hidden" name="vehicleType" value="<%= vehicleType %>">
+    <input type="date" name="startDate" required>
+    <input type="date" name="endDate" required>
+    <div class="button-container">
+      <button type="submit">Submit</button>
+      <a href="<%= wheels === 2 ? '/type2' : '/type4' %>">Previous</a>
+    </div>
+  </form>
+</div>
