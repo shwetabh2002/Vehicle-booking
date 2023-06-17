@@ -7,7 +7,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //put connection string for database connection
-mongoose.connect('mongodb+srv://shwetabh183:123456admin@shwetabhapi.1i7iowa.mongodb.net/userreg?retryWrites=true&w=majority', {
+mongoose.connect('CONNECTION_STRING', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
